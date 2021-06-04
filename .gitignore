@@ -40,3 +40,10 @@ BeecowLogistics.Api/obj/
 
 BeecowLogistics.Services/bin/
 BeecowLogistics.Services/obj/
+
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
