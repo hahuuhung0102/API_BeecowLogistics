@@ -10,7 +10,7 @@ namespace BeecowLogistics.Services.Entities
         public bool PhoneConfirmed { get; set; }
         public string Email { get; set; }
         public bool EmailConfirmed { get; set; }
-        public byte[] PasswordHash { get; set; }
+        public string PasswordHash { get; set; }
         public string Address { get; set; }
         public bool Gender { get; set; }
         public DateTime? DoB { get; set; }
