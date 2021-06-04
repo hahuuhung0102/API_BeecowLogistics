@@ -6392,24 +6392,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ACER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BeecowLogistics\\BeecowLogistics.Api\\BeecowLogistics.Api\\BeecowLogistics.Api.csproj",
+      "projectUniqueName": "D:\\projects\\API_BeecowLogistics\\BeecowLogistics.Api\\BeecowLogistics.Api.csproj",
       "projectName": "BeecowLogistics.Api",
-      "projectPath": "D:\\BeecowLogistics\\BeecowLogistics.Api\\BeecowLogistics.Api\\BeecowLogistics.Api.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\BeecowLogistics\\BeecowLogistics.Api\\BeecowLogistics.Api\\obj\\",
+      "projectPath": "D:\\projects\\API_BeecowLogistics\\BeecowLogistics.Api\\BeecowLogistics.Api.csproj",
+      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\API_BeecowLogistics\\BeecowLogistics.Api\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6423,8 +6418,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\BeecowLogistics\\BeecowLogistics.Api\\BeecowLogistics.Services\\BeecowLogistics.Services.csproj": {
-              "projectPath": "D:\\BeecowLogistics\\BeecowLogistics.Api\\BeecowLogistics.Services\\BeecowLogistics.Services.csproj"
+            "D:\\projects\\API_BeecowLogistics\\BeecowLogistics.Services\\BeecowLogistics.Services.csproj": {
+              "projectPath": "D:\\projects\\API_BeecowLogistics\\BeecowLogistics.Services\\BeecowLogistics.Services.csproj"
             }
           }
         }
@@ -6488,7 +6483,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
