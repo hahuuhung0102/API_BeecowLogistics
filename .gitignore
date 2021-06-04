@@ -35,3 +35,8 @@ msbuild.wrn
 
 # Visual Studio
 .vs/
+BeecowLogistics.Api/bin/
+BeecowLogistics.Api/obj/
+
+BeecowLogistics.Services/bin/
+BeecowLogistics.Services/obj/

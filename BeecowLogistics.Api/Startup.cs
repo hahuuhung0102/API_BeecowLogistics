@@ -36,6 +36,7 @@ namespace BeecowLogistics.Api
             services.AddSingleton(AutoMapperConfig.RegisterMappings());
             services.InstallServicesInAssembly(Configuration);
 
+            services.Configs();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
