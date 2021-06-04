@@ -1,0 +1,15 @@
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\bin\Debug\net5.0\BeecowLogistics.Services.deps.json
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\bin\Debug\net5.0\BeecowLogistics.Services.runtimeconfig.json
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\bin\Debug\net5.0\BeecowLogistics.Services.runtimeconfig.dev.json
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\bin\Debug\net5.0\BeecowLogistics.Services.dll
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\bin\Debug\net5.0\ref\BeecowLogistics.Services.dll
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\bin\Debug\net5.0\BeecowLogistics.Services.pdb
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.AssemblyInfoInputs.cache
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.AssemblyInfo.cs
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.csproj.CoreCompileInputs.cache
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.dll
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\ref\BeecowLogistics.Services.dll
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.pdb
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.genruntimeconfig.cache
+D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.csprojAssemblyReference.cache
