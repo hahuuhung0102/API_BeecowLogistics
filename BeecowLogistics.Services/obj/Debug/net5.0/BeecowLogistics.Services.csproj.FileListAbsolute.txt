@@ -12,4 +12,3 @@ D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0
 D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\ref\BeecowLogistics.Services.dll
 D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.pdb
 D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.genruntimeconfig.cache
-D:\BeecowLogistics\BeecowLogistics.Api\BeecowLogistics.Services\obj\Debug\net5.0\BeecowLogistics.Services.csprojAssemblyReference.cache

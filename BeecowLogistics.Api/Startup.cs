@@ -23,6 +23,7 @@ namespace BeecowLogistics.Api
         {
             services.AddDbContext<BeecowLogisticsDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
 
+            services.Configs();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
