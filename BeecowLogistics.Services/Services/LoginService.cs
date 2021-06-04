@@ -20,37 +20,24 @@ namespace BeecowLogistics.Services.Services
     public class LoginService : BaseService, ILoginService
     {
         private readonly IConfiguration _config;
-        /*private readonly SignInManager<Users> _signInManager;
-        private readonly UserManager<Users> _userManager;*/
 
         public LoginService(
-            /*UserManager<Users> userManager,
-            SignInManager<Users> signInManager,*/
             IConfiguration config,
             IRepository repository,
             IMapperService mapperService) : base(repository, mapperService)
         {
-            //_userManager = userManager;
-            //_signInManager = signInManager;
             _config = config;
         }
 
         public async Task<string> AuthencateAsync(LoginRequestModel request)
         {
             var user = await Context.Users.FirstOrDefaultAsync(u => u.Phone == request.UserName || u.Email == request.UserName);
-
             if (user == null) return null;
 
-            /*if (user != null && !await _userManager.CheckPasswordAsync(user, request.Password))
-            {
-                return null;
-            }
+            var hasher = new PasswordHasher<User>();
+            var verified = hasher.VerifyHashedPassword(null, user.PasswordHash, request.Password);
 
-            var username = user.Phone != null ? user.Phone : user.Email;
-            var result = await _signInManager.PasswordSignInAsync(username, request.Password, request.RememberMe, true);
-            if (result == null) return null;*/
-
-            if (user.PasswordHash != request.Password)
+            if (verified == PasswordVerificationResult.Failed)
             {
                 return null;
             }
@@ -58,7 +45,7 @@ namespace BeecowLogistics.Services.Services
             var claims = new[]
             {
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Name, user.Fullname),
+                new Claim(ClaimTypes.Name, user.FullName),
                 new Claim(ClaimTypes.MobilePhone, user.Phone),
             };
 
@@ -76,21 +63,35 @@ namespace BeecowLogistics.Services.Services
         public async Task<LoginModel> GetLoginAsync(string username)
         {
             var login = await Context.Users.FirstOrDefaultAsync(u => u.Phone == username || u.Email == username);
-            return MapperService.ConvertTo<Users, LoginModel>(login);
+            return MapperService.ConvertTo<User, LoginModel>(login);
         }
 
-
-        public async Task<IdentityResult> AddLoginAsync(RegisterRequestModel request)
+        public async Task<bool> AddLoginAsync(RegisterRequestModel request)
         {
-            /*var appUser = MapperService.ConvertTo<RegisterRequestModel, AppUser>(request);
-            var hasher = new PasswordHasher<AppUser>();
 
-            appUser.PasswordHash = hasher.HashPassword(null, request.ConfirmPassword);
+            if (request.Password != request.ConfirmPassword)
+            {
+                return false;
+            }
 
-            var result = await _userManager.CreateAsync(appUser);*/
+            var isExist = await Context.Users.FirstOrDefaultAsync(u=>u.Phone == request.Phone || u.Email == request.Email);
+            if (isExist != null)
+            {
+                return false;
+            }
 
-            return null;
+            var user = MapperService.ConvertTo<RegisterRequestModel, User>(request);
 
+            var hasher = new PasswordHasher<User>();
+            user.PasswordHash = hasher.HashPassword(null, request.ConfirmPassword);
+
+            user.CreatedTime = DateTime.Now;
+            user.LastSavedTime = DateTime.Now;
+
+            Context.Users.Add(user);
+            await Context.SaveChangesAsync();
+
+            return true;
         }
 
     }

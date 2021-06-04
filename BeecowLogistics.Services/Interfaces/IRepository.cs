@@ -9,6 +9,6 @@ namespace BeecowLogistics.Services.Interfaces
 {
     public interface IRepository
     {
-        BeecowLogisticsDbContext DbContext { get; }
+        BeecowLogisticsContext DbContext { get; }
     }
 }

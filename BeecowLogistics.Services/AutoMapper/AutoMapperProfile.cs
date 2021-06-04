@@ -8,7 +8,8 @@ namespace BeecowLogistics.Services.AutoMapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<LoginModel, Users>().ReverseMap();
+            CreateMap<LoginModel, User>().ReverseMap();
+            CreateMap<RegisterRequestModel, User>().ReverseMap();
         }
     }
 }

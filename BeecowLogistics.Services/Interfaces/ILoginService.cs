@@ -15,5 +15,8 @@ namespace BeecowLogistics.Services.Interfaces
         public Task<string> AuthencateAsync(LoginRequestModel request);
 
         //public Task<IdentityResult> AddLoginAsync(RegisterRequestModel request);
+        public Task<bool> AddLoginAsync(RegisterRequestModel request);
+
+
     }
 }

@@ -46,6 +46,21 @@ namespace BeecowLogistics.Api.Controllers
 
             return Ok(new { token = resultToken });
         }
-        
+
+        [HttpPost("register")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Authenticate([FromBody] RegisterRequestModel request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _loginService.AddLoginAsync(request);
+            if (!result)
+            {
+                return CreateErrorResponse();
+            }
+            return CreateSuccessResponse("Register is successful");
+        }
+
     }
 }
