@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BeecowLogistics.Services.Migrations
 {
-    [DbContext(typeof(BeecowLogisticsDbContext))]
+    [DbContext(typeof(BeecowLogisticsContext))]
     [Migration("20210604052458_Migrations")]
     partial class Migrations
     {

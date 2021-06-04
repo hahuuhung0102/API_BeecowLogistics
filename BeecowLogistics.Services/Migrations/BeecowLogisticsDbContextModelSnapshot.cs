@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BeecowLogistics.Services.Migrations
 {
-    [DbContext(typeof(BeecowLogisticsDbContext))]
+    [DbContext(typeof(BeecowLogisticsContext))]
     partial class BeecowLogisticsDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

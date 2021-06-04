@@ -11,9 +11,9 @@ namespace BeecowLogistics.Services.Services
 {
     public class UserService : IUserService
     {
-        private readonly BeecowLogisticsDbContext _dbContext;
+        private readonly BeecowLogisticsContext _dbContext;
 
-        public UserService(BeecowLogisticsDbContext dbContext)
+        public UserService(BeecowLogisticsContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -34,7 +34,7 @@ namespace BeecowLogistics.Services.Services
             return new UserResponse
             {
                 UserId = user.Id,
-                Username = user.Fullname,
+                Username = user.FullName,
                 Email = user.Email,
                 Phone = user.Phone,
                 Token = "123",
