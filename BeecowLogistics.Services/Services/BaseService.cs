@@ -7,12 +7,14 @@ namespace BeecowLogistics.Services.Services
     public abstract class BaseService
     {
         protected readonly BeecowLogisticContext Context;
+        protected readonly IMapper Mapper;
+        protected readonly MapperConfiguration ConfigMapper;
 
-        protected readonly IMapperService MapperService;
-        protected BaseService(IRepository repository, IMapperService mapperService)
+        protected BaseService(IRepository repository, IMapper mapper, MapperConfiguration mapperConfiguration)
         {
             Context = repository.DbContext;
-            this.MapperService = mapperService;
+            Mapper = mapper;
+            ConfigMapper = mapperConfiguration;
         }
     }
 }

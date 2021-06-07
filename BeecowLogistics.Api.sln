@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeecowLogistics.Api", "BeecowLogistics.Api\BeecowLogistics.Api.csproj", "{D02FB27C-9CFB-4687-AA6E-A2AD3A8D7B40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeecowLogistics.Api", "BeecowLogistics.Api\BeecowLogistics.Api.csproj", "{D02FB27C-9CFB-4687-AA6E-A2AD3A8D7B40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeecowLogistics.Services", "BeecowLogistics.Services\BeecowLogistics.Services.csproj", "{8E1A873A-71C2-4265-9394-2C74D9475626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeecowLogistics.Services", "BeecowLogistics.Services\BeecowLogistics.Services.csproj", "{8E1A873A-71C2-4265-9394-2C74D9475626}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

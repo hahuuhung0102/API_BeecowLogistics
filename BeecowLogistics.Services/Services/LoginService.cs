@@ -24,7 +24,9 @@ namespace BeecowLogistics.Services.Services
         public LoginService(
             IConfiguration config,
             IRepository repository,
-            IMapperService mapperService) : base(repository, mapperService)
+            IMapper mapper,
+            MapperConfiguration configMapper
+            ) : base(repository, mapper, configMapper)
         {
             _config = config;
         }
@@ -44,9 +46,9 @@ namespace BeecowLogistics.Services.Services
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Name, user.FullName),
-                new Claim(ClaimTypes.MobilePhone, user.Phone),
+                new Claim(ClaimTypes.Email, user.Email == null ? "" :  user.Email),
+                new Claim(ClaimTypes.Name, user.FullName == null ? "" :  user.FullName),
+                new Claim(ClaimTypes.MobilePhone, user.Phone == null ? "" :  user.Phone),
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
@@ -63,7 +65,7 @@ namespace BeecowLogistics.Services.Services
         public async Task<LoginModel> GetLoginAsync(string username)
         {
             var login = await Context.Users.FirstOrDefaultAsync(u => u.Phone == username || u.Email == username);
-            return MapperService.ConvertTo<User, LoginModel>(login);
+            return Mapper.Map<LoginModel>(login);
         }
 
         public async Task<bool> AddLoginAsync(RegisterRequestModel request)
