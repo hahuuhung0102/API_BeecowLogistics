@@ -18,20 +18,6 @@ namespace BeecowLogistics.Api.Controllers
             _loginService = loginBussinessService;
         }
 
-        [HttpGet("{username}")]
-        public async Task<IActionResult> GetLogin(string username)
-        {
-            var result = await _loginService.GetLoginAsync(username);
-
-            if (result is null)
-            {
-                return CreateNotFoundResponse(StringContanst.NOT_FOUND);
-            }
-
-            return CreateSuccessResponse(result);
-        }
-
-
         [HttpPost("authenticate")]
         [AllowAnonymous]
         public async Task<IActionResult> Authenticate([FromBody] LoginRequestModel request)
