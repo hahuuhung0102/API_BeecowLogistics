@@ -18,11 +18,11 @@ namespace BeecowLogistics.Api.Installers
                     o => o.MigrationsAssembly("BeecowLogistics.Services")));
 
 
-            services.AddTransient<IRepository, Repository>();
-            services.AddTransient<IMapperService, MapperService>();
+            services.AddScoped<IRepository, Repository>();
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IUserService, UserService>();
-
+           
+            services.AddScoped<IStationService, StationService>();
 
             //services.AddScoped<ILogging, Logging>();
             //services.AddScoped<IWebHelper, WebHelper>();
