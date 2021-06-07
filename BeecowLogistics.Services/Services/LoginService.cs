@@ -44,9 +44,9 @@ namespace BeecowLogistics.Services.Services
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Name, user.FullName),
-                new Claim(ClaimTypes.MobilePhone, user.Phone),
+                new Claim(ClaimTypes.Email, user.Email == null ? "" :  user.Email),
+                new Claim(ClaimTypes.Name, user.FullName == null ? "" :  user.FullName),
+                new Claim(ClaimTypes.MobilePhone, user.Phone == null ? "" :  user.Phone),
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
