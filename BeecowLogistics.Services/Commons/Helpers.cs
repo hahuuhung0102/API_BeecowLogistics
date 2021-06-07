@@ -9,22 +9,14 @@ namespace BeecowLogistics.Services.Commons
 {
     public class Helpers
     {
-        /*public static bool VerifyPassword(string password, string storedHash)
+        public static string UserCodeGenerator(string type)
         {
-            var rfc2898DerivedBytes = new Rfc2898DeriveBytes(password, 10000);
-            var x = Convert.ToBase64String(rfc2898DerivedBytes.GetBytes(256));
-
-            return x == storedHash;
+            var bytes = new byte[4];
+            var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(bytes);
+            uint random = BitConverter.ToUInt32(bytes, 0) % 100000000;
+            return $"{type}{String.Format("{0:D8}", random)}";
         }
-
-        public static string GeneratePasswordHash(string password)
-        {
-            var data = Encoding.ASCII.GetBytes(password);
-            var sha1 = new SHA1CryptoServiceProvider();
-            var hashPassword = sha1.ComputeHash(data);
-
-            Convert.ToBase64String()
-            return hashPassword;
-        }*/
+        
     }
 }

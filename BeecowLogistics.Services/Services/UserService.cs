@@ -11,9 +11,9 @@ namespace BeecowLogistics.Services.Services
 {
     public class UserService : IUserService
     {
-        private readonly BeecowLogisticsContext _dbContext;
+        private readonly BeecowLogisticContext _dbContext;
 
-        public UserService(BeecowLogisticsContext dbContext)
+        public UserService(BeecowLogisticContext dbContext)
         {
             _dbContext = dbContext;
         }
