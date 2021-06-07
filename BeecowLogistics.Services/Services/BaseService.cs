@@ -6,7 +6,7 @@ namespace BeecowLogistics.Services.Services
 {
     public abstract class BaseService
     {
-        protected readonly BeecowLogisticsContext Context;
+        protected readonly BeecowLogisticContext Context;
 
         protected readonly IMapperService MapperService;
         protected BaseService(IRepository repository, IMapperService mapperService)

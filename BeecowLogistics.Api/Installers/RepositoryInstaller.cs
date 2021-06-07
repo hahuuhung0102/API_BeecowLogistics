@@ -12,7 +12,7 @@ namespace BeecowLogistics.Api.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             var connetionString = configuration.GetConnectionString("ConnStr");
-            services.AddDbContext<BeecowLogisticsContext>(options =>
+            services.AddDbContext<BeecowLogisticContext>(options =>
                 options.UseSqlServer(
                     connetionString,
                     o => o.MigrationsAssembly("BeecowLogistics.Services")));

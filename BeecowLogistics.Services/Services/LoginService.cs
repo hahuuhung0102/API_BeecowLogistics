@@ -68,30 +68,39 @@ namespace BeecowLogistics.Services.Services
 
         public async Task<bool> AddLoginAsync(RegisterRequestModel request)
         {
+            try
+            {
+                if (request.Password != request.ConfirmPassword)
+                {
+                    return false;
+                }
 
-            if (request.Password != request.ConfirmPassword)
+                var isExist = await Context.Users.FirstOrDefaultAsync(u => u.Phone == request.Phone || u.Email == request.Email);
+                if (isExist != null)
+                {
+                    return false;
+                }
+
+                var hasher = new PasswordHasher<User>();
+                Context.Users.Add(new User
+                {
+                    Code = Helpers.UserCodeGenerator("UID"),
+                    FullName = request.FullName,
+                    Phone = request.Phone,
+                    PasswordHash = hasher.HashPassword(null, request.ConfirmPassword),
+                    CreatedTime = DateTime.Now,
+                    LastSavedTime = DateTime.Now,
+                }); ;
+
+                await Context.SaveChangesAsync();
+
+                return true;
+
+            } catch (Exception ex)
             {
                 return false;
             }
-
-            var isExist = await Context.Users.FirstOrDefaultAsync(u=>u.Phone == request.Phone || u.Email == request.Email);
-            if (isExist != null)
-            {
-                return false;
-            }
-
-            var user = MapperService.ConvertTo<RegisterRequestModel, User>(request);
-
-            var hasher = new PasswordHasher<User>();
-            user.PasswordHash = hasher.HashPassword(null, request.ConfirmPassword);
-
-            user.CreatedTime = DateTime.Now;
-            user.LastSavedTime = DateTime.Now;
-
-            Context.Users.Add(user);
-            await Context.SaveChangesAsync();
-
-            return true;
+            
         }
 
     }

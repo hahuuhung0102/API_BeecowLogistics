@@ -5,14 +5,14 @@ namespace BeecowLogistics.Services.Services
 {
     public class Repository : IRepository
     {
-        private readonly BeecowLogisticsContext _context;
+        private readonly BeecowLogisticContext _context;
 
-        public Repository(BeecowLogisticsContext context)
+        public Repository(BeecowLogisticContext context)
         {
             _context = context;
         }
 
-        public BeecowLogisticsContext DbContext
+        public BeecowLogisticContext DbContext
         {
             get
             {
