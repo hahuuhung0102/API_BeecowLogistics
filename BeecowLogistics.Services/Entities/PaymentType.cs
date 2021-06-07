@@ -5,23 +5,21 @@ using System.Collections.Generic;
 
 namespace BeecowLogistics.Services.Entities
 {
-    public partial class UserType
+    public partial class PaymentType
     {
-        public UserType()
+        public PaymentType()
         {
-            Users = new HashSet<User>();
+            Orders = new HashSet<Order>();
         }
 
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string Code { get; set; }
-        public int? Status { get; set; }
         public bool? IsActive { get; set; }
         public string LastSavedUser { get; set; }
         public DateTime LastSavedTime { get; set; }
         public string CreatedUser { get; set; }
         public DateTime CreatedTime { get; set; }
 
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -5,23 +5,18 @@ using System.Collections.Generic;
 
 namespace BeecowLogistics.Services.Entities
 {
-    public partial class UserType
+    public partial class VehicleRoute
     {
-        public UserType()
-        {
-            Users = new HashSet<User>();
-        }
-
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Code { get; set; }
+        public Guid VehicleId { get; set; }
+        public Guid RouteId { get; set; }
         public int? Status { get; set; }
-        public bool? IsActive { get; set; }
         public string LastSavedUser { get; set; }
         public DateTime LastSavedTime { get; set; }
         public string CreatedUser { get; set; }
         public DateTime CreatedTime { get; set; }
 
-        public virtual ICollection<User> Users { get; set; }
+        public virtual Route Route { get; set; }
+        public virtual Vehicle Vehicle { get; set; }
     }
 }
