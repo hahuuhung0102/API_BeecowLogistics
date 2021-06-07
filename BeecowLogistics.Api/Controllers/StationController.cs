@@ -25,8 +25,15 @@ namespace BeecowLogistics.Api.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> LoadData(string sidx, string sord, int page, int rows)
         {
-            if (page == 0)
+            if (page < 1)
+            {
                 page = 1;
+            }
+
+            if (rows < 1)
+            {
+                rows = 10;
+            }
 
             var data = await _stationService.PaginationAsync(new ParamaterPagination { page = page, pageSize = rows });
             return new OkObjectResult(new { total = data.TotalPages, page, records = data.TotalItems, rows = data.Result });
