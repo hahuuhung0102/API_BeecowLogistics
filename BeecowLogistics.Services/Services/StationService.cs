@@ -17,12 +17,13 @@ namespace BeecowLogistics.Services.Services
     public class StationService: BaseService, IStationService
     {
         private ProcessingResult processingResult;
+        private readonly MapperConfiguration _configMapper;
 
         public StationService(
             IRepository repository,
-            IMapperService mapperService) : base(repository, mapperService)
+            IMapper mapper,
+            MapperConfiguration configMapper) : base(repository, mapper, configMapper)
         {
-
         }
 
         public async Task<ProcessingResult> AddAsync(StationModel model)
@@ -35,7 +36,7 @@ namespace BeecowLogistics.Services.Services
                 model.LastSavedTime = DateTime.Now;
                 model.IsActive = true;
 
-                var item = MapperService.ConvertTo<StationModel, Station> (model);
+                var item = Mapper.Map<Station>(model);
 
                 //Will remove after complete
                 item.StationTypeId = null;
@@ -80,7 +81,7 @@ namespace BeecowLogistics.Services.Services
             var item = await Context.Stations.FirstOrDefaultAsync(x => x.Id == id);
             if (item != null)
             {
-                return MapperService.ConvertTo<Station, StationModel>(item);
+                return Mapper.Map<StationModel>(item);
             }
 
             return null;
@@ -94,15 +95,9 @@ namespace BeecowLogistics.Services.Services
         public async Task<Pager> PaginationAsync(ParamaterPagination paramater)
         {
             var result = new List<StationModel>();
-            var stations = await Context.Stations.ToListAsync();
+            var stations = await Context.Stations.ProjectTo<StationModel>(ConfigMapper).ToListAsync();
 
-            foreach(var station in stations)
-            {
-                var stationModel = MapperService.ConvertTo<Station, StationModel>(station);
-                result.Add(stationModel);
-            }
-
-            return result.ToPagination(paramater.page , paramater.pageSize);
+            return stations.ToPagination(paramater.page , paramater.pageSize);
         }
 
         public async Task<ProcessingResult> UpdateAsync(StationModel model)
@@ -112,7 +107,7 @@ namespace BeecowLogistics.Services.Services
                 model.LastSavedUser = "";
                 model.LastSavedTime = DateTime.Now;
 
-                var item = MapperService.ConvertTo<StationModel, Station>(model);
+                var item = Mapper.Map<Station>(model);
 
                 Context.Stations.Update(item);
                 await Context.SaveChangesAsync();

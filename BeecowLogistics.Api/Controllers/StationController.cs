@@ -53,5 +53,12 @@ namespace BeecowLogistics.Api.Controllers
             return new JsonResult(await _stationService.DeleteAsync(id));
         }
 
+        [HttpGet("get")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Get(Guid id)
+        {
+            return new JsonResult(await _stationService.FindById(id));
+        }
+
     }
 }

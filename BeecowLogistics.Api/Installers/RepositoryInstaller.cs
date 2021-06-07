@@ -19,7 +19,6 @@ namespace BeecowLogistics.Api.Installers
 
 
             services.AddScoped<IRepository, Repository>();
-            services.AddScoped<IMapperService, MapperService>();
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IUserService, UserService>();
            
